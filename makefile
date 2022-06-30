@@ -9,6 +9,6 @@ staticlib:
 	gcc-10 staticlib_gauss.c -c
 	ar -crs libstaticlib_gauss.a staticlib_gauss.o
 	sudo cp staticlib_gauss.h /usr/include
-	sudo cp libGauss_staticlib.a /usr/lib
+	sudo cp libstaticlib_gauss.a /usr/lib
 
 

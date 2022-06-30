@@ -5,7 +5,7 @@
 void print_gaussian_erwartung_stdabw(int anzahl,FILE*Input_stream){
 
 
-int laenge=30;
+int laenge=100;
 double temp, temp_var,summe,erwartungw,varianz,stdabw;
 char speicher [laenge];
 char end;

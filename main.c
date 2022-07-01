@@ -18,12 +18,13 @@ int amount_of_values = 100;
 int option;
 int i;
 
-while((option=getopt(argc,argv,"he:s:a:"))!=-1)
+while((option=getopt(argc,argv,"vhe:s:a:"))!=-1)
 
 		switch (option)
 			{
-			case 'h':
+			case 'v':
                                 printf("Die Version ist 0.1 Alpha\n");
+				printf("Programmierer: Roman Rückert & Sebastian Käwel\n");
                                 return 0;
 			case 'e':
 				expected_value=atoi(optarg);
@@ -37,9 +38,18 @@ while((option=getopt(argc,argv,"he:s:a:"))!=-1)
 				amount_of_values=atoi(optarg);
 				printf("Anzahl Werte: %i\n",amount_of_values);
 				break;
+			case 'h':
+				printf("Diese Programm erstellt eine Zufallsliste von Zahlen einer Gausschenverteilung\n");
+				printf("Standartwerte sind für -a =100 ,-s=1, -e=10 \n");
+				printf("Optionen sind:\n");
+				printf("-v	Für Versionanzeige\n");
+				printf("-e      Erwartungswert {-e xxx} \n");
+				printf("-s      Für Standartabweichung {-s xxx}\n");
+				printf("-a      Für die Anzahl an Messwerten {-a xxx}\n");
+				return 0;
 			}
 	FILE *output_stream;
-	output_stream = fopen("zufall.txt", "a+");
+	output_stream = fopen("zufall.txt", "w");
 	if (output_stream == NULL) // test for files not existing.
 	{
 	printf("Error! Datei nicht gefunden\n");
